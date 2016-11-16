@@ -44,8 +44,8 @@ app.post('/newUser/:id', function(req, res) {
         employeeNumber: req.params.id + "",
         password: generatePassword(),
         team: req.body.team,
-        shifts: [],
-        applications: []
+        shifts: req.body.shifts,
+        applications: req.body.applications
     });
     user.save(function(err) {
         if(err)
@@ -72,7 +72,6 @@ app.get('/applications/:id', function(req, res) {
             if(users.length == 1)
             {
                 user = users[0];
-                user.applications.push({"date":"12.maj", "type":"14-6 fri", "team":"3"});
                 res.render('applications',{user: user.firstName, applications: user.applications});
             }
         }

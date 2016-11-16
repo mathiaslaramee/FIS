@@ -1,2 +1,9 @@
 <h1>{{user}}</h1>
-<textarea>{{applications}}</textarea>
+
+
+
+<textarea>
+    {{#each applications}}
+    team: {{team}}, type: {{type}}, date: {{date}}
+        {{/each}}
+</textarea>
