@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{Personside}}</title>
+    <link rel="stylesheet" href="../css/Personside.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"></script>
+</head>
+
+<body>
+<main id="Banner">
+    <a href="#"><img id="logo" src="../Pictures/PostNordICON2.png"></a>
+    <div class="row">
+        <h1 id="header">{{Medarbejderside}}</h1>
+    </div>
+    <form>
+        <div>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <p>{{Fornavn}}:</p><input id="Fornavn" type="text">
+                    <p>{{Efternavn}}:</p><input id="Efternavn" type="text">
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <p>{{Adresse}}:</p><input id="Adresse" type="text">
+                    <p>{{Postnummer}}:</p> <input id="Postnummer/By" type="text">
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <p>{{Email}}:</p><input id="email" type="text">
+                    <p>{{Telefonnummer}}:</p><input id="TLF" type="text">
+
+                </div>
+
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <p>{{Medarbejdernummer}}:</p><input id="Medarbejdernummer" type="text">
+                    <p>{{Team}}:</p><input id="Team" type="text">
+                </div>
+            </div>
+        </div>
+
+        <div id="buttonrow" class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2">
+
+                <button id="Frihedsansøgning">{{Frihedsansøgning}} <br>  <span class="glyphicon glyphicon-envelope"></span></button>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2">
+                <button id="Oversigter">{{Oversigter}} <br>  <span class="glyphicon glyphicon-th"></span></button>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2">
+                <button id="Kalender">{{Kalender}} <br>   <span class="glyphicon glyphicon-calendar"></span></button>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2">
+                <button id="Byttevagter">{{BytteVagter}} <br>   <span class="glyphicon glyphicon-transfer"></span></button>
+            </div>
+        </div>
+    </form>
+
+</main>
+</body>
+</html>
