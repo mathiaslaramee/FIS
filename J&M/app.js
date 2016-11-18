@@ -75,10 +75,7 @@ app.get('/applications/:id', function(req, res) {
                 res.render('applications',{user: user.firstName, applications: user.applications});
             }
         }
-
-
     });
-
 });
 
 app.listen(app.get('port'), function() {
