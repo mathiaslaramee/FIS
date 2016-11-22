@@ -1,10 +1,6 @@
 /**
  * Created by jonas on 17-11-2016.
  */
-
-
-
-
     var Calendar = function (o) {
         //Store div id
         this.divId = o.ParentID;
