@@ -169,24 +169,6 @@ router.get('/application/:id', function(req, res) {
     });
 });
 
-router.get('/application/:id', function(req, res) {
-    var user;
-    User.find({"employeeNumber" : req.params.id}, function(err, users) {
-        if(err)
-        {
-            res.send(err);
-        }
-        else
-        {
-            if(users.length == 1)
-            {
-                user = users[0];
-                res.render('application');
-            }
-        }
-    });
-});
-
 
 router.get('/userApplications/:id', function(req, res) {
     var admin;
