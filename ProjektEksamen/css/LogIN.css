@@ -1,0 +1,26 @@
+main{
+    background-color:#91cdf2;
+
+}
+#header1{
+    font-family: Verdana;
+    text-align:center;
+    font-weight: bold;
+    color: white;
+}
+#password{
+    margin-top: 20px;
+
+}
+/*.wrapper{*/
+    /*text-align:center;*/
+/*}*/
+
+#Login{
+
+    border-radius:10px;
+    padding:5px;
+    width:175px;
+    margin-top:4px;
+    margin-bottom:120px;
+}
