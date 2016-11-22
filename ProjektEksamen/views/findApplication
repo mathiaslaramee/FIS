@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <script src="../javascripts/jquery-3.1.0.min.js"></script>
+    <script src="../javascripts/client2.js"></script>
+</head>
+<body>
+<div>
+    <form class="container">
+        <input type="text" name="username" id="id" class="col-md-2" placeholder="Username">
+        <input type="text" name="date" id="date" class="col-md-2" placeholder="Date">
+        <input type="submit" name="submit" class="btn btn-primary" style="margin-top: 20px">
+    </form>
+</div>
+</body>
+</html>

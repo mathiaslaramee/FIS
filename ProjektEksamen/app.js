@@ -197,6 +197,17 @@ router.get('/userApplications/:id', function(req, res) {
     });
 });
 
+router.get('/findApp/:id', function(req, res) {
+    Application.find({'employeeNumber': req.params.id}, function(err, apps) {
+        if(err) {
+            res.send(err);
+        } else {
+            res.render('findApplication');
+        }
+    })
+})
+
+
 function generatePassword() {
     var length = 8,
         charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
