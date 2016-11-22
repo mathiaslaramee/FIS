@@ -198,15 +198,29 @@ router.get('/userApplications/:id', function(req, res) {
 });
 
 router.get('/findApp/:id', function(req, res) {
+    res.setHeader('Cache-Control', 'no-cache');
     Application.find({'employeeNumber': req.params.id}, function(err, apps) {
         if(err) {
             res.send(err);
         } else {
-            res.render('findApplication');
+            res.render('findApp.hbs', {val:req.params.id});
         }
     })
-})
+});
 
+router.get('/findApp/:id/:date', function(req, res) {
+    res.setHeader('Cache-Control', 'no-cache');
+    Application.find({'employeeNumber': req.params.id, 'vacaDate':req.params.date}, function(err, app) {
+        if(err || app.length == 0) {
+            console.log('err');
+            res.render('appFound', {tArea: 'Application not found'});
+            console.log('render færdig');
+        } else {
+            console.log(app);
+            res.render('appFound', {tArea: app});
+        }
+    });
+});
 
 function generatePassword() {
     var length = 8,

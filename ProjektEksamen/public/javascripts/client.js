@@ -1,10 +1,10 @@
 /**
  * Created by Neels1 on 16/11/16.
  */
-
 $(function () {
-$.get('/application/:id', appendToList);
+//$.get('/application/:id', appendToList);
 
+console.log('fuck af');
     var employeeNr;
     function appendToList(apps) {
         var list = [];
@@ -15,7 +15,8 @@ $.get('/application/:id', appendToList);
         $('.apps').append(list);
     };
 
-    $('form').on('submit', function (event) {
+    $('submit').on('submit', function (event) {
+        console.log('submit client');
         event.preventDefault();
         $.ajax({type: 'PUT', url: window.location.pathname, data: $(this).serialize()}).done(function (data) {
             appendToList([data]);

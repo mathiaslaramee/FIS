@@ -4,15 +4,22 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
     <script src="../javascripts/jquery-3.1.0.min.js"></script>
-    <script src="../javascripts/client2.js"></script>
+    <script src="../javascripts/findApp.js"></script>
 </head>
 <body>
 <div>
     <form class="container">
-        <input type="text" name="username" id="id" class="col-md-2" placeholder="Username">
+        <input type="text" name="username" id="id" class="col-md-2" value={{val}}>
         <input type="text" name="date" id="date" class="col-md-2" placeholder="Date">
-        <input type="submit" name="submit" class="btn btn-primary" style="margin-top: 20px">
+        <input type="submit" name="submit" id="submittos" class="btn btn-primary" style="margin-top: 20px">
     </form>
 </div>
+
+<div>
+    <textarea>
+        {{tArea}}
+    </textarea>
+</div>
+
 </body>
 </html>
