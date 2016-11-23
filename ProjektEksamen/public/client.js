@@ -33,6 +33,8 @@ $.get('/application/:id', appendToList);
         $.ajax({type: 'GET', url: 'http://localhost:8080/findApp/' + user + '/' + date}).done(function(data) {
             if(data.vacaDate != null) {
                 $('textarea').val(data.employeeNumber + '\n' + data.vacaDate);
+            } else {
+                $('textarea').val("Not found");
             }
         });
         $('#form1').trigger('reset');

@@ -236,7 +236,7 @@ router.get('/findApp/:id/:date', function(req, res) {
             var reqMonth = day[0];
             var reqDay = day[1];
             var reqYear = day[2];
-
+            var app = {};
             for(var i in apps){
 
                 if(apps[i].vacaDate != null)
@@ -249,10 +249,10 @@ router.get('/findApp/:id/:date', function(req, res) {
 
                 if(reqDay == day && reqMonth == month && reqYear == year)
                 {
-                    console.log('found');
-                    res.send(apps[i]);
+                    app = apps[i];
                 }
             }
+            res.send(app);
         }
     });
 });
