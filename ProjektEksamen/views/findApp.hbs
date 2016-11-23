@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
-    <script src="../javascripts/jquery-3.1.0.min.js"></script>
-    <script src="../javascripts/findApp.js"></script>
-</head>
-<body>
 <div>
-    <form class="container">
-        <input type="text" name="username" id="id" class="col-md-2" value={{val}}>
-        <input type="text" name="date" id="date" class="col-md-2" placeholder="Date">
-        <input type="submit" name="submit" id="submittos" class="btn btn-primary" style="margin-top: 20px">
+    <form id="form1">
+        <input type="text" id="username" value={{username}} placeholder="Username">
+        <input type="text" id="date" placeholder="Date">
+        <input type="submit" id="submits" value="Submit">
     </form>
 </div>
 
@@ -20,6 +11,3 @@
         {{tArea}}
     </textarea>
 </div>
-
-</body>
-</html>

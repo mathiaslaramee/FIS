@@ -40,7 +40,7 @@ router.put('/application/:id', function (req, res) {
     var application = new Application({
         name: req.body.name,
         lastName: req.body.lastname,
-        employeeNr: req.body.employeeNr,
+        employeeNumber: req.body.employeeNr,
         datoDel: req.body.datoDel,
         address: req.body.address,
         by: req.body.by,
@@ -169,6 +169,24 @@ router.get('/application/:id', function(req, res) {
     });
 });
 
+router.get('/application/:id', function(req, res) {
+    var user;
+    User.find({"employeeNumber" : req.params.id}, function(err, users) {
+        if(err)
+        {
+            res.send(err);
+        }
+        else
+        {
+            if(users.length == 1)
+            {
+                user = users[0];
+                res.render('application');
+            }
+        }
+    });
+});
+
 
 router.get('/userApplications/:id', function(req, res) {
     var admin;
@@ -197,27 +215,44 @@ router.get('/userApplications/:id', function(req, res) {
     });
 });
 
+
 router.get('/findApp/:id', function(req, res) {
-    res.setHeader('Cache-Control', 'no-cache');
-    Application.find({'employeeNumber': req.params.id}, function(err, apps) {
-        if(err) {
-            res.send(err);
-        } else {
-            res.render('findApp.hbs', {val:req.params.id});
-        }
-    })
+    res.render('findApp', {username: req.params.id});
 });
 
 router.get('/findApp/:id/:date', function(req, res) {
-    res.setHeader('Cache-Control', 'no-cache');
-    Application.find({'employeeNumber': req.params.id, 'vacaDate':req.params.date}, function(err, app) {
-        if(err || app.length == 0) {
-            console.log('err');
-            res.render('appFound', {tArea: 'Application not found'});
-            console.log('render færdig');
+
+    Application.find({'employeeNumber':req.params.id}, function(err, apps) {
+        if(err || apps.length == 0)
+        {
+            console.log('Ikke fundet');
+            res.send({msg: 'not found'});
         } else {
-            console.log(app);
-            res.render('appFound', {tArea: app});
+            var day;
+            var month;
+            var year;
+            var date = req.params.date.toString();
+            var day = date.split('-');
+            var reqMonth = day[0];
+            var reqDay = day[1];
+            var reqYear = day[2];
+
+            for(var i in apps){
+
+                if(apps[i].vacaDate != null)
+                {
+                    day = apps[i].vacaDate.getDate().toString();
+                    month = apps[i].vacaDate.getMonth() + 1;
+                    month = month.toString();
+                    year = apps[i].vacaDate.getFullYear().toString();
+                }
+
+                if(reqDay == day && reqMonth == month && reqYear == year)
+                {
+                    console.log('found');
+                    res.send(apps[i]);
+                }
+            }
         }
     });
 });
